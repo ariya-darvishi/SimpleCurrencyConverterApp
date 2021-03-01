@@ -6,7 +6,7 @@ import com.example.simplecurrencyconverterapp.utils.Resource
 import java.lang.Exception
 import javax.inject.Inject
 
-class DefaultRepository @Inject constructor(
+class DefaultMainRepository @Inject constructor(
     private val api : CurrencyApi
 ) : MainRepository{
 
@@ -21,7 +21,7 @@ class DefaultRepository @Inject constructor(
                 Resource.Error(response.message())
             }
         }catch (e:Exception){
-            Resource.Error(e.message ?: "An error occurred in get Rates from api!")
+            Resource.Error(e.message ?: "An error occurred!")
         }
 
     }
