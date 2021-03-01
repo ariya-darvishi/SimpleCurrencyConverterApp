@@ -19,7 +19,7 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _conversion = MutableStateFlow<CurrencyEvent>(CurrencyEvent.Empty)
-    private val conversion: StateFlow<CurrencyEvent> = _conversion
+    val conversion: StateFlow<CurrencyEvent> = _conversion
 
     fun convert(
         amountStr: String,
