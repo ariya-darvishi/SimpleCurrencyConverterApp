@@ -35,14 +35,14 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch(dispatchers.io) {
             _conversion.value = CurrencyEvent.Loading
 
-            when (val getResponse = repository.getRates(fromCurrency)) {
+            when (val ratesResponse = repository.getRates(fromCurrency)) {
 
                 is Resource.Error -> _conversion.value =
-                    CurrencyEvent.Failure(getResponse.message!!)
+                    CurrencyEvent.Failure(ratesResponse.message!!)
 
                 is Resource.Success -> {
-                    val rates = getResponse.data!!.rates
-                    val rate = getRateForCurrency(fromCurrency, rates)
+                    val rates = ratesResponse.data!!.rates
+                    val rate = getRateForCurrency(toCurrency, rates)
 
                     if (rate == null) {
                         _conversion.value = CurrencyEvent.Failure("Unexpected error")

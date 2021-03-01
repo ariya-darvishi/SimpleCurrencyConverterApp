@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface CurrencyApi {
 
-    @GET("/lasted")
+    @GET("/latest")
     suspend fun getRates(
         @Query("base") base: String
     ): Response<CurrencyResponse>

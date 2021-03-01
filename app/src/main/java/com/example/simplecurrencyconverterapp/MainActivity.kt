@@ -1,6 +1,5 @@
 package com.example.simplecurrencyconverterapp
 
-import android.app.usage.UsageEvents
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +11,6 @@ import com.example.simplecurrencyconverterapp.main.MainViewModel
 import com.example.simplecurrencyconverterapp.utils.CurrencyEvent
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
-import javax.net.ssl.SSLSessionBindingEvent
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
